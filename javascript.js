@@ -8,3 +8,9 @@ function getComputerChoice() {
     return "Scissors";
 }
 console.log(getComputerChoice());
+
+function getHumanChoice() {
+    let humanChoice = prompt('Enter your choice (Rock / Paper / Scissors): ');
+    return humanChoice;
+}
+console.log(getHumanChoice());
