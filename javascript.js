@@ -1,10 +1,10 @@
 function getComputerChoice() {
-    let computerChoice = Math.floor(Math.random() * 100);
-    if (computerChoice < 33) {
-        return "rock";
-    } else if (computerChoice < 66){
-        return "paper";
-    }
+    // let computerChoice = Math.floor(Math.random() * 100);
+    // if (computerChoice < 33) {
+    //     return "rock";
+    // } else if (computerChoice < 66){
+    //     return "paper";
+    // }
     return "scissors";
 }
 
@@ -44,20 +44,25 @@ function playGame() {
 function playRound(computerChoice, humanChoice) {
     if (humanChoice === computerChoice) {
         console.log(`${computerChoice} ties with ${humanChoice}`);
+        result.textContent = `Tie, ${humanChoice}`;
     } else if (humanChoice === 'rock' && computerChoice === 'paper' ||
                 humanChoice === 'paper' && computerChoice === 'scissors'||
                 humanChoice === 'scissors' && computerChoice === 'rock') {
-        console.log(`Computer wins, ${computerChoice} beats ${humanChoice}`)
+        console.log(`Computer wins, ${computerChoice} beats ${humanChoice}`);
+        result.textContent = `Computer wins, ${computerChoice} beats ${humanChoice}`;
         // computerScore++;
     } else {
         console.log(`You win, ${humanChoice} beats ${computerChoice}`)
+        result.textContent = `You win, ${humanChoice} beats ${computerChoice}`;
         // humanScore++;
     }
 }
 
 const humanChoiceButtons = document.querySelectorAll(`button`);
+const result = document.querySelector(`.result`);
 
 humanChoiceButtons.forEach((button) => {
+    // let humanScore = 0, computerScore = 0;
     button.addEventListener(`click`, () => {
         const computerChoice = getComputerChoice();
         const humanChoice = button.id;
