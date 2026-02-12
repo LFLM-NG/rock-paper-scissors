@@ -1,3 +1,3 @@
 # rock-paper-scissors
 Simple Project to Practice Foundational JavaScript  <br>
-Only works in the web browser console
+Added a web UI for interaction
